@@ -9,7 +9,5 @@
   "scripts": {
     "dev": "nuxt"
   },
-  "dependencies": {
-    "nuxt": "^2.14.0"
-  }
+  "dependencies": {}
 }
