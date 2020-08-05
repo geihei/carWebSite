@@ -1,5 +1,5 @@
 {
-  "name": "carWebSite",
+  "name": "car-web-site",
   "version": "1.0.0",
   "description": "一汽出行",
   "main": "index.js",
@@ -7,7 +7,17 @@
   "author": "geihei&moonths",
   "license": "MIT",
   "scripts": {
-    "dev": "nuxt"
+    "dev": "node server",
+    "dev-client": "node server-client"
   },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.17.1",
+    "vue": "^2.6.11",
+    "vue-router": "^3.3.4",
+    "vue-server-renderer": "^2.6.11",
+    "vuex": "^3.5.1"
+  },
+  "devDependencies": {
+    "vue-template-compiler": "^2.6.11"
+  }
 }
