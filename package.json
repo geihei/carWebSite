@@ -8,7 +8,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "node server",
-    "dev-client": "node server-client"
+    "start": "yarn build:client && yarn dev:client",
+    "dev:client": "node server-client",
+    "build:client": "webpack --config ./build/webpack.base.config.js"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -18,6 +20,17 @@
     "vuex": "^3.5.1"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.2.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "less": "^3.12.2",
+    "less-loader": "^6.2.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
+    "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.11",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
