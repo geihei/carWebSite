@@ -6,6 +6,9 @@
         {{{ meta }}} -->
     </head>
     <body>
+        <script>
+            (function (d, c) { let e = d.documentElement, b = 'orientationchange' in window ? 'orientationchange' : 'resize', a = function () { let f = e.clientWidth; if (!f) { return; } if (f >= 750) { e.style.fontSize = '100px'; } else { e.style.fontSize = (f / 375 * 100) + 'px'; } }; if (!d.addEventListener) { return; }c.addEventListener(b, a, false); d.addEventListener('DOMContentLoaded', a, false); a(); }(document, window));
+        </script>
         <div id="app"></div>
         <!--vue-ssr-outlet-->
     </body>
