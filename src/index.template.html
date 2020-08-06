@@ -2,12 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
         <!-- <title>{{ title }}</title>
         {{{ meta }}} -->
     </head>
     <body>
         <script>
-            (function (d, c) { let e = d.documentElement, b = 'orientationchange' in window ? 'orientationchange' : 'resize', a = function () { let f = e.clientWidth; if (!f) { return; } if (f >= 750) { e.style.fontSize = '100px'; } else { e.style.fontSize = (f / 375 * 100) + 'px'; } }; if (!d.addEventListener) { return; }c.addEventListener(b, a, false); d.addEventListener('DOMContentLoaded', a, false); a(); }(document, window));
+            (function (d, c) { let e = d.documentElement, b = 'orientationchange' in window ? 'orientationchange' : 'resize', a = function () { let f = e.clientWidth; if (!f) { return; } if (f >= 750) { e.style.fontSize = '16px'; } else { e.style.fontSize = (f / 375 * 16) + 'px'; } }; if (!d.addEventListener) { return; }c.addEventListener(b, a, false); d.addEventListener('DOMContentLoaded', a, false); a(); }(document, window));
         </script>
         <div id="app"></div>
         <!--vue-ssr-outlet-->

@@ -5095,6 +5095,11 @@ vue@^2.6.11:
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.11.tgz?cache=0&sync_timestamp=1595984018055&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha1-dllNh31LEiNEBuhONSdcbVFBJcU=
 
+vuetify@^2.3.7:
+  version "2.3.7"
+  resolved "https://registry.npm.taobao.org/vuetify/download/vuetify-2.3.7.tgz#3f5dc9c63ae2b670d74374020c36409da144aa2b"
+  integrity sha1-P13JxjritnDXQ3QCDDZAnaFEqis=
+
 vuex@^3.5.1:
   version "3.5.1"
   resolved "https://registry.npm.taobao.org/vuex/download/vuex-3.5.1.tgz#f1b8dcea649bc25254cf4f4358081dbf5da18b3d"
