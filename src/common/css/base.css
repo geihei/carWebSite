@@ -178,11 +178,9 @@ dfn[title] {
 }
 body {
     min-width: 320px;
-    max-width: 768px;
     margin: 0 auto;
     background-color: #FFF;
     color: #000;
-    font: .14rem/1.5 helvetica neue, tahoma, arial, hiragino sans gb, microsoft yahei, sans-serif;
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
 }

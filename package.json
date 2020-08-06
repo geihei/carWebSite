@@ -27,6 +27,7 @@
     "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/polyfill": "^7.10.4",
     "@babel/preset-env": "^7.11.0",
+    "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "child_process": "^1.0.2",

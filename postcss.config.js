@@ -1,8 +1,8 @@
 module.exports = {
-    // parser: 'sugarss',
     plugins: {
         'postcss-import': {},
-        // 'postcss-preset-env': {},
-        // 'cssnano': {}
+        'autoprefixer': {
+            overrideBrowserslist: ['last 5 version', '>1%', 'ios 7']
+        }
     }
 }

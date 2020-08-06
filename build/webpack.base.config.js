@@ -2,7 +2,6 @@ const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-// const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 function resolve(dir) {
@@ -70,28 +69,22 @@ module.exports = {
                 test:/\.less$/,
                 use:['style-loader','css-loader',"postcss-loader",'less-loader']
             },
-            // {
-            //     test: /\.css$/,
-            //     use: [ 'style-loader', 'css-loader']
-            // },
             {
                 test: /\.css$/,
                 use: [
+                    'style-loader',
                     MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            url: false
-                        }
-                    }
-                ]
+                    'css-loader',
+                    'postcss-loader',
+                ],
+                exclude: /node_modules/,
+                include: [resolve('src')]
             }
         ]
     },
     plugins: [
         new VueLoaderPlugin(),
         new CleanWebpackPlugin(),
-        // new ExtractTextPlugin("styles.css"),
         new MiniCssExtractPlugin("styles.css"),
         new HtmlWebpackPlugin({
 			filename:'../dist/web.html',

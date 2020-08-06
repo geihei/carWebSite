@@ -41,6 +41,8 @@ export default {
     width: 300px;
     height: 300px;
     color: red;
+    display: flex;
+
     .img {
         width: 100px;
         height: 100px;
