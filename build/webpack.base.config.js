@@ -3,21 +3,41 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
+function resolve(dir) {
+    return path.join(__dirname, '../', dir)
+}
 
 module.exports = {
-    entry: './src/web/app.js',
+    entry: {
+        web: './src/web/app.js',
+        h5: './src/h5/app.js',
+    },
     mode: 'development',
     output: {
-        path: path.resolve(__dirname, '../dist'),
-        filename: '[name].[hash].js'
+        path: resolve('dist'),
+        filename: '[name].[hash].js',
+        publicPath: '',
+    },
+    resolve: {
+        extensions: ['.js', '.vue'],
+        alias: {
+            '@': resolve('src'),
+        },
     },
     module: {
         rules: [
             {
+                test: /\.js$/, 
+                exclude: /node_modules/, 
+                use: {
+                    loader: 'babel-loader'
+                }
+            },
+            {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
-                    // limit: 10000,
+                    limit: 10000,
                     esModule: false,
                     name: '[name].[hash:7].[ext]'
                 }
@@ -27,6 +47,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
+                    esModule: false,
                     name: '[name].[hash:7].[ext]'
                 }
             },
@@ -35,6 +56,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
+                    esModule: false,
                     name: '[name].[hash:7].[ext]'
                 }
             },
@@ -46,21 +68,21 @@ module.exports = {
                 test:/\.less$/,
                 use:['style-loader','css-loader',"postcss-loader",'less-loader']
             },
-            {
-                test:/\.(png|jpg|jpeg|gif)$/,
-                use:[
-                    {loader:'file-loader', options:{}}
-                ]
-            }
         ]
     },
     plugins: [
         new VueLoaderPlugin(),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-			filename:'../dist/index.html',
+			filename:'../dist/web.html',
 			template:'./src/index.template.html',
-			chunks:['main']
+			chunks:['web']
+        }),
+
+        new HtmlWebpackPlugin({
+			filename:'../dist/h5.html',
+			template:'./src/index.template.html',
+			chunks:['h5']
         })
     ]
 }

@@ -13,7 +13,7 @@ const routes = new Router({
             meta: {
                 title: 'aaa'
             },
-            component: () => import('@/web/app.vue')
+            component: () => import('@/h5/app.vue')
         },
     ]
 })
