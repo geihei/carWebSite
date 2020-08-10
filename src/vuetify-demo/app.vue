@@ -1,13 +1,14 @@
 <template>
     <v-app>
-        <div class="app">
-            <div class="item1">
+        <div class="d-flex flex-row">
+            <div>
                 vuetify组件demo
-                <div>
+                <div class="d-flex flex-column">
                     <router-link to="/demo/carousels">轮播</router-link>
+                    <router-link to="/demo/alert">普通对话框</router-link>
                 </div>
             </div>
-            <div class="item">
+            <div class="flex-grow-1">
                 <router-view />
             </div>
         </div>
@@ -24,13 +25,4 @@ export default {
 </script>
 
 <style scoped lang="less">
-.app {
-    display: flex;
-    .item1 {
-        width: 200px;
-    }
-    .item {
-        flex:1
-    }
-}
 </style>

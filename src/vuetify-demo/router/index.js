@@ -13,21 +13,27 @@ let routes = [
         name: 'demo',
         meta: { title: 'demo' },
         component: () => import('@/vuetify-demo/components/index.vue'),
-        // children: [
-        //     {
-        //         path: '/demo/carousels',
-        //         name: 'carousels',
-        //         meta: { title: '轮播图' },
-        //         component: () => import('@/vuetify-demo/components/carousels.vue'),
-        //     },
-        // ],
+        children: [
+            {
+                path: '/demo/carousels',
+                name: 'carousels',
+                meta: { title: '轮播图' },
+                component: () => import('@/vuetify-demo/components/carousels.vue'),
+            },
+            {
+                path: '/demo/alert',
+                name: 'alert',
+                meta: { title: '对话框' },
+                component: () => import('@/vuetify-demo/components/alert.vue'),
+            },
+        ],
     },
-    {
-        path: '/demo/carousels',
-        name: 'carousels',
-        meta: { title: '轮播图' },
-        component: () => import('@/vuetify-demo/components/carousels.vue'),
-    },
+    // {
+    //     path: '/demo/carousels',
+    //     name: 'carousels',
+    //     meta: { title: '轮播图' },
+    //     component: () => import('@/vuetify-demo/components/carousels.vue'),
+    // },
 ]
 
 const router = new Router({
