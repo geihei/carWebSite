@@ -88,17 +88,35 @@ module.exports = {
         new HtmlWebpackPlugin({
 			filename:'../dist/web.html',
 			template:'./src/index.template.html',
-			chunks:['web']
+            chunks:['web'],
+            minify:{
+                removeRedundantAttributes:true, // 删除多余的属性
+                collapseWhitespace:true, // 折叠空白区域
+                removeAttributeQuotes: true, // 移除属性的引号
+                collapseBooleanAttributes: true // 省略只有 boolean 值的属性值 例如：readonly checked
+            },
         }),
         new HtmlWebpackPlugin({
 			filename:'../dist/h5.html',
 			template:'./src/index.template.html',
-			chunks:['h5']
+			chunks:['h5'],
+            minify:{
+                removeRedundantAttributes:true, // 删除多余的属性
+                collapseWhitespace:true, // 折叠空白区域
+                removeAttributeQuotes: true, // 移除属性的引号
+                collapseBooleanAttributes: true // 省略只有 boolean 值的属性值 例如：readonly checked
+            },
         }),
         new HtmlWebpackPlugin({
 			filename:'../dist/demo.html',
 			template:'./src/index.template.html',
-			chunks:['demo']
+			chunks:['demo'],
+            minify:{
+                removeRedundantAttributes:true, // 删除多余的属性
+                collapseWhitespace:true, // 折叠空白区域
+                removeAttributeQuotes: true, // 移除属性的引号
+                collapseBooleanAttributes: true // 省略只有 boolean 值的属性值 例如：readonly checked
+            },
         }),
     ]
 }

@@ -8,34 +8,21 @@ function resolve(dir) {
     return path.join(__dirname, '', dir)
 }
 
+function sendHtml(file) {
+    return function (req, res) {
+        const html = fs.readFileSync(resolve(file), 'utf-8')
+        res.send(html)
+    }
+}
+
 app.use(express.static(resolve('./dist')))
 
-app.get('/web', function(req, res) {
-    const html = fs.readFileSync(resolve('./dist/web.html'), 'utf-8')
-    res.send(html)
-})
-app.get('/web/*', function(req, res) {
-    const html = fs.readFileSync(resolve('./dist/web.html'), 'utf-8')
-    res.send(html)
-})
-
-app.get('/h5', function(req, res) {
-    const html = fs.readFileSync(resolve('./dist/h5.html'), 'utf-8')
-    res.send(html)
-})
-app.get('/h5/*', function(req, res) {
-    const html = fs.readFileSync(resolve('./dist/h5.html'), 'utf-8')
-    res.send(html)
-})
-
-app.get('/demo', function(req, res) {
-    const html = fs.readFileSync(resolve('./dist/demo.html'), 'utf-8')
-    res.send(html)
-})
-app.get('/demo/*', function(req, res) {
-    const html = fs.readFileSync(resolve('./dist/demo.html'), 'utf-8')
-    res.send(html)
-})
+app.get('/web', sendHtml('./dist/web.html'))
+app.get('/web/*', sendHtml('./dist/web.html'))
+app.get('/h5', sendHtml('./dist/h5.html'))
+app.get('/h5/*', sendHtml('./dist/h5.html'))
+app.get('/demo', sendHtml('./dist/demo.html'))
+app.get('/demo/*', sendHtml('./dist/demo.html'))
 
 app.listen(8082, () => {
     console.log(`server started at localhost:8082`)
