@@ -26,6 +26,7 @@
         </v-carousel>
         <div class="app">
             hello, world ！ my name is web, 热更新啦哈哈哈哈. 再次更新啦哈哈
+            hello, world ！ my name is web, 热更新啦哈哈哈哈. 再次更新啦哈哈
 
             <img class="img" src="@/common/assets/1.png" alt="">
         </div>

@@ -12,12 +12,13 @@ module.exports = {
     entry: {
         web: './src/web/app.js',
         h5: './src/h5/app.js',
+        demo: './src/vuetify-demo/app.js'
     },
     mode: 'development',
     output: {
         path: resolve('dist'),
         filename: '[name].[hash].js',
-        publicPath: '',
+        publicPath: '/',
     },
     resolve: {
         extensions: ['.js', '.vue'],
@@ -93,6 +94,11 @@ module.exports = {
 			filename:'../dist/h5.html',
 			template:'./src/index.template.html',
 			chunks:['h5']
+        }),
+        new HtmlWebpackPlugin({
+			filename:'../dist/demo.html',
+			template:'./src/index.template.html',
+			chunks:['demo']
         }),
     ]
 }
