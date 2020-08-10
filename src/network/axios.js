@@ -18,8 +18,8 @@ function useInterceptors(service) {
         config => {
             return config
         },
-        err => {
-            return Promise.reject(err)
+        error => {
+            return Promise.reject(error)
         }
     )
     service.interceptors.response.use(
