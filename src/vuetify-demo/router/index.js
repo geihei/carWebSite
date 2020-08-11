@@ -1,7 +1,4 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-
-Vue.use(Router)
+const Router = require('VueRouter')
 
 let routes = [
     {
@@ -28,12 +25,6 @@ let routes = [
             },
         ],
     },
-    // {
-    //     path: '/demo/carousels',
-    //     name: 'carousels',
-    //     meta: { title: '轮播图' },
-    //     component: () => import('@/vuetify-demo/components/carousels.vue'),
-    // },
 ]
 
 const router = new Router({

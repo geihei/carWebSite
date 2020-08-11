@@ -1,7 +1,4 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-
-Vue.use(Router)
+const Router = require('VueRouter')
 
 const routes = new Router({
     mode: 'history',
