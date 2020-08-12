@@ -10,7 +10,8 @@
     "dev": "node webpack",
     "start": "yarn build:client && yarn dev:client",
     "dev:client": "node server-client",
-    "build:client": "webpack --config ./build/webpack.base.config.js"
+    "build:client": "webpack --config ./build/webpack.base.config.js",
+    "analyzer": "yarn build:client --report"
   },
   "dependencies": {
     "axios": "^0.19.2",
