@@ -73,7 +73,19 @@ let config = {
             },
             {
                 test:/\.less$/,
-                use:['style-loader','css-loader',"postcss-loader",'less-loader'],
+                use:[
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'less-loader',
+                    {
+                        loader: 'style-resources-loader',
+                        options: {
+                            patterns: [resolve('src/common/css/variable.less')],
+                            injector: 'prepend'
+                        }
+                    }
+                ],
             },
             {
                 test: /\.css$/,

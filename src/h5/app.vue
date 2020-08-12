@@ -79,8 +79,12 @@ export default {
 }
 </script>
 
+<style lang="less">
+
+</style>
+
 <style scoped lang="less">
-@rpx: 16rem;
+
 
 .app {
     color: red;
