@@ -4,13 +4,13 @@
  * @Author: maojike
  * @Date: 2020-08-10 22:36:49
  * @LastEditors: maojike
- * @LastEditTime: 2020-08-17 18:20:54
+ * @LastEditTime: 2020-08-17 21:56:32
  */
 const path = require("path");//nodejs里面的基本包，用来处理路径
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 // const ExtractTextPlugin =require ('extract-text-webpack-plugin') ;
 const webpack = require('webpack');
-const packagejson = require('./package.json')
+// const packagejson = require('./package.json')
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 // const {AutoWebPlugin} =require ('web-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -32,7 +32,7 @@ module.exports ={
   entry:{
     pc:'./src/web/entry-client.js',
     h5:'./src/h5/entry-client.js',
-    vendor:Object.keys(packagejson.dependencies)
+    // vendor:Object.keys(packagejson.dependencies)
   },
   output: {
     path:path.resolve(__dirname,'dist'),
