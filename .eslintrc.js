@@ -43,5 +43,16 @@ module.exports = {
         'import/no-unresolved': 'off',
         'no-shadow': 'off',
         'import/no-extraneous-dependencies': 'off',
+        'no-plusplus': 'off',
+        'no-mixed-operators': 'off',
+        'max-len': ['warn', {
+            code: 160,
+            ignoreComments: true,
+            ignoreTrailingComments: true,
+            ignoreUrls: true,
+            ignoreStrings: true,
+            ignoreTemplateLiterals: true,
+            ignoreRegExpLiterals: true,
+        }],
     },
 }

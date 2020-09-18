@@ -25,5 +25,5 @@ app.get('/demo', sendHtml('./dist/demo.html'))
 app.get('/demo/*', sendHtml('./dist/demo.html'))
 
 app.listen(8082, () => {
-    console.log(`server started at localhost:8082`)
+    console.log('server started at localhost:8082')
 })
