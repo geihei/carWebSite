@@ -30,7 +30,11 @@
 
             <img class="img" src="@/common/assets/1.png" alt="">
         </div>
+        我是app页面
+        <router-view></router-view>
     </v-app>
+    <!-- <v-app>
+    </v-app> -->
 </template>
 
 <script>

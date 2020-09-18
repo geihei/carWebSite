@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const express = require('express')
+const history = require('connect-history-api-fallback')
 
 const app = express()
 
@@ -15,14 +16,27 @@ function sendHtml(file) {
     }
 }
 
-app.use(express.static(resolve('./dist')))
+app
+    .use(history({
+        htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
+        rewrites: [
+            {
+                from: /^\/.*$/,
+                to(context) {
+                    console.log(context)
+                    return '/web'
+                },
+            },
+        ],
+    }))
+    .use(express.static(resolve('./dist')))
 
 app.get('/web', sendHtml('./dist/web.html'))
-app.get('/web/*', sendHtml('./dist/web.html'))
-app.get('/h5', sendHtml('./dist/h5.html'))
-app.get('/h5/*', sendHtml('./dist/h5.html'))
-app.get('/demo', sendHtml('./dist/demo.html'))
-app.get('/demo/*', sendHtml('./dist/demo.html'))
+// app.get('/web/index', sendHtml('./dist/web.html'))
+// app.get('/h5', sendHtml('./dist/h5.html'))
+// app.get('/h5/*', sendHtml('./dist/h5.html'))
+// app.get('/demo', sendHtml('./dist/demo.html'))
+// app.get('/demo/*', sendHtml('./dist/demo.html'))
 
 app.listen(8082, () => {
     console.log('server started at localhost:8082')
