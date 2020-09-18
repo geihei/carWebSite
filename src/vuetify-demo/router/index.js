@@ -1,6 +1,6 @@
 const Router = require('VueRouter')
 
-let routes = [
+const routes = [
     {
         path: '/',
         redirect: '/demo',

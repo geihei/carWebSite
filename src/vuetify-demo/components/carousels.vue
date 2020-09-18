@@ -48,7 +48,7 @@ export default {
     },
     created() {
         console.log('进入轮播图组件')
-    }
+    },
 }
 </script>
 

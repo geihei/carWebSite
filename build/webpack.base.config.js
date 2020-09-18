@@ -3,7 +3,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 function resolve(dir) {
     return path.join(__dirname, '../', dir)
@@ -11,11 +11,11 @@ function resolve(dir) {
 
 const isReport = process.argv.includes('--report')
 
-let config = {
+const config = {
     entry: {
         web: './src/web/app.js',
         h5: './src/h5/app.js',
-        demo: './src/vuetify-demo/app.js'
+        demo: './src/vuetify-demo/app.js',
     },
     mode: 'development',
     output: {
@@ -42,7 +42,7 @@ let config = {
                 options: {
                     limit: 10000,
                     esModule: false,
-                    name: '[name].[hash:7].[ext]'
+                    name: '[name].[hash:7].[ext]',
                 },
                 include: [resolve('src')],
             },
@@ -52,7 +52,7 @@ let config = {
                 options: {
                     limit: 10000,
                     esModule: false,
-                    name: '[name].[hash:7].[ext]'
+                    name: '[name].[hash:7].[ext]',
                 },
                 include: [resolve('src')],
             },
@@ -62,7 +62,7 @@ let config = {
                 options: {
                     limit: 10000,
                     esModule: false,
-                    name: '[name].[hash:7].[ext]'
+                    name: '[name].[hash:7].[ext]',
                 },
                 include: [resolve('src')],
             },
@@ -72,8 +72,8 @@ let config = {
                 include: [resolve('src')],
             },
             {
-                test:/\.less$/,
-                use:[
+                test: /\.less$/,
+                use: [
                     'style-loader',
                     'css-loader',
                     'postcss-loader',
@@ -82,9 +82,9 @@ let config = {
                         loader: 'style-resources-loader',
                         options: {
                             patterns: [resolve('src/common/css/variable.less')],
-                            injector: 'prepend'
-                        }
-                    }
+                            injector: 'prepend',
+                        },
+                    },
                 ],
             },
             {
@@ -95,44 +95,44 @@ let config = {
                     'css-loader',
                     'postcss-loader',
                 ],
-            }
-        ]
+            },
+        ],
     },
     plugins: [
         new VueLoaderPlugin(),
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin("styles.css"),
+        new MiniCssExtractPlugin('styles.css'),
         new HtmlWebpackPlugin({
-			filename:'../dist/web.html',
-			template:'./src/index.template.html',
-            chunks:['web'],
-            minify:{
-                removeRedundantAttributes:true, // 删除多余的属性
-                collapseWhitespace:true, // 折叠空白区域
+            filename: '../dist/web.html',
+            template: './src/index.template.html',
+            chunks: ['web'],
+            minify: {
+                removeRedundantAttributes: true, // 删除多余的属性
+                collapseWhitespace: true, // 折叠空白区域
                 removeAttributeQuotes: true, // 移除属性的引号
-                collapseBooleanAttributes: true // 省略只有 boolean 值的属性值 例如：readonly checked
+                collapseBooleanAttributes: true, // 省略只有 boolean 值的属性值 例如：readonly checked
             },
         }),
         new HtmlWebpackPlugin({
-			filename:'../dist/h5.html',
-			template:'./src/index.template.html',
-			chunks:['h5'],
-            minify:{
-                removeRedundantAttributes:true, // 删除多余的属性
-                collapseWhitespace:true, // 折叠空白区域
+            filename: '../dist/h5.html',
+            template: './src/index.template.html',
+            chunks: ['h5'],
+            minify: {
+                removeRedundantAttributes: true, // 删除多余的属性
+                collapseWhitespace: true, // 折叠空白区域
                 removeAttributeQuotes: true, // 移除属性的引号
-                collapseBooleanAttributes: true // 省略只有 boolean 值的属性值 例如：readonly checked
+                collapseBooleanAttributes: true, // 省略只有 boolean 值的属性值 例如：readonly checked
             },
         }),
         new HtmlWebpackPlugin({
-			filename:'../dist/demo.html',
-			template:'./src/index.template.html',
-			chunks:['demo'],
-            minify:{
-                removeRedundantAttributes:true, // 删除多余的属性
-                collapseWhitespace:true, // 折叠空白区域
+            filename: '../dist/demo.html',
+            template: './src/index.template.html',
+            chunks: ['demo'],
+            minify: {
+                removeRedundantAttributes: true, // 删除多余的属性
+                collapseWhitespace: true, // 折叠空白区域
                 removeAttributeQuotes: true, // 移除属性的引号
-                collapseBooleanAttributes: true // 省略只有 boolean 值的属性值 例如：readonly checked
+                collapseBooleanAttributes: true, // 省略只有 boolean 值的属性值 例如：readonly checked
             },
         }),
     ],
@@ -143,36 +143,36 @@ let config = {
             // 代码分割最小的模块大小，引入的模块大于 20000B 才做代码分割
             minSize: 20000,
             // 代码分割最大的模块大小，大于这个值要进行代码分割，一般使用默认值
-            maxSize: 0, 
+            maxSize: 0,
             // 引入的次数大于等于1时才进行代码分割
             minChunks: 1,
             // 最大的异步请求数量,也就是同时加载的模块最大模块数量
             maxAsyncRequests: 30,
             // 入口文件做代码分割最多分成 30 个 js 文件
-            maxInitialRequests: 30, 
+            maxInitialRequests: 30,
             // 文件生成时的连接符
-            automaticNameDelimiter: '~', 
+            automaticNameDelimiter: '~',
             enforceSizeThreshold: 5000,
             cacheGroups: {
                 vendors: {
                     test: /[\\/]node_modules[\\/]/,
                     priority: 10,
-                    name: 'vendors'
+                    name: 'vendors',
                 },
                 common: {
                     test: /[\\/]src[\\/]/,
                     priority: 5,
-                    name: 'common'
-                }
-            }
-        }
+                    name: 'common',
+                },
+            },
+        },
     },
     externals: {
-        'Vue': 'Vue',
-        'Vuetify': 'Vuetify',
-        'VueRouter': 'VueRouter',
-        'vuex': 'Vuex',
-    }
+        Vue: 'Vue',
+        Vuetify: 'Vuetify',
+        VueRouter: 'VueRouter',
+        vuex: 'Vuex',
+    },
 }
 
 if (isReport) {
@@ -183,20 +183,18 @@ if (isReport) {
         //  在`disabled`模式下，你可以使用这个插件来将`generateStatsFile`设置为`true`来生成Webpack Stats JSON文件。
         analyzerMode: 'server',
         analyzerHost: '127.0.0.1',
-        analyzerPort: 8888, 
+        analyzerPort: 8888,
         reportFilename: 'report.html',
         //  模块大小默认显示在报告中。
         //  应该是`stat`，`parsed`或者`gzip`中的一个。
         //  有关更多信息，请参见“定义”一节。
         defaultSizes: 'parsed',
         openAnalyzer: true,
-        generateStatsFile: false, 
+        generateStatsFile: false,
         statsFilename: 'stats.json',
         statsOptions: null,
-        logLevel: 'info'
+        logLevel: 'info',
     }))
 }
-
-
 
 module.exports = config

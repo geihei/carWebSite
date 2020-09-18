@@ -1,11 +1,10 @@
 import axios from 'axios'
 
-let config = {
+const config = {
     baseURL: '',
     timeout: 50000,
-    withCredentials: true
+    withCredentials: true,
 }
-
 
 function generateService(config, useInterceptors) {
     const service = axios.create(config)
@@ -15,20 +14,12 @@ function generateService(config, useInterceptors) {
 
 function useInterceptors(service) {
     service.interceptors.request.use(
-        config => {
-            return config
-        },
-        error => {
-            return Promise.reject(error)
-        }
+        (config) => config,
+        (error) => Promise.reject(error),
     )
     service.interceptors.response.use(
-        response => {
-            return response
-        },
-        error => {
-            return Promise.reject(error)
-        }
+        (response) => response,
+        (error) => Promise.reject(error),
     )
 }
 
@@ -38,4 +29,4 @@ export function Service(config) {
 
 const service = Service(config)
 
-export default service 
+export default service

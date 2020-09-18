@@ -20,7 +20,7 @@
 export default {
     created() {
         console.log('进入app组件')
-    }
+    },
 }
 </script>
 

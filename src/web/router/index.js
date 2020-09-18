@@ -8,11 +8,11 @@ const routes = new Router({
             path: '/',
             name: 'App',
             meta: {
-                title: 'aaa'
+                title: 'aaa',
             },
-            component: () => import('@/web/app.vue')
+            component: () => import('@/web/app.vue'),
         },
-    ]
+    ],
 })
 
 export default routes

@@ -27,7 +27,6 @@
             </v-carousel>
 
             <span class="font">hello, world ！ my name is h5. hahhaha</span>
-            
 
             <img class="img" src="@/common/assets/1.png" alt="">
         </div>
@@ -57,18 +56,16 @@ export default {
     },
     async created() {
         console.log('app.vue')
-        let obj = [1, 2]
-
-        let obj1 = {
+        const obj1 = {
             a: 1,
             b: 2,
         }
 
-        let obj2 = {
-            c: 3
+        const obj2 = {
+            c: 3,
         }
 
-        let obj3 = {
+        const obj3 = {
             ...obj1,
             ...obj2,
         }
@@ -84,7 +81,6 @@ export default {
 </style>
 
 <style scoped lang="less">
-
 
 .app {
     color: red;

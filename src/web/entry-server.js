@@ -1,6 +1,6 @@
-import { createApp } from './app'
+import { createApp } from './app' // eslint-disable-line
 
-export default context => {
+export default (context) => {
     const { app } = createApp()
     return app
 }

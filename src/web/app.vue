@@ -56,18 +56,17 @@ export default {
     },
     async created() {
         console.log('app.vue')
-        let obj = [1, 2]
 
-        let obj1 = {
+        const obj1 = {
             a: 1,
             b: 2,
         }
 
-        let obj2 = {
-            c: 3
+        const obj2 = {
+            c: 3,
         }
 
-        let obj3 = {
+        const obj3 = {
             ...obj1,
             ...obj2,
         }

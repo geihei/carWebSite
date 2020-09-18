@@ -10,7 +10,7 @@ const app = new Vue({
     el: '#app',
     router,
     vuetify,
-    render: h => h(App)
+    render: (h) => h(App),
 })
 
 export default app

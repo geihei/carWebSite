@@ -7,7 +7,7 @@
 export default {
     created() {
         console.log('进入index组件')
-    }
+    },
 }
 </script>
 
