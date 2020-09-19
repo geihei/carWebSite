@@ -85,7 +85,7 @@ export default {
 .app {
     color: red;
     .font {
-        font-size: 24/@rpx;
+        font-size: 24/@rex;
     }
     .img {
         width: 100px;

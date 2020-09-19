@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!-- header组件 -->
+        <ele-header></ele-header>
         <router-link to="/web/news">我是布局页面</router-link>
         <router-view></router-view>
         <!-- footer组件 -->
@@ -8,7 +8,12 @@
 </template>
 
 <script>
+import EleHeader from '@/common/components/ele-header'
+
 export default {
+    components: {
+        EleHeader,
+    },
     created() {
         console.log('进入布局页面')
     },

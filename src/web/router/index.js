@@ -5,11 +5,7 @@ const routes = new Router({
     routes: [
         {
             path: '/web',
-            name: 'App',
-            meta: {
-                title: 'app',
-            },
-            component: () => import('@/web/app.vue'),
+            redirect: '/web/index',
         },
         {
             path: '/web/index',
