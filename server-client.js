@@ -23,7 +23,6 @@ app
             {
                 from: /^\/.*$/,
                 to(context) {
-                    console.log(context)
                     return '/web'
                 },
             },

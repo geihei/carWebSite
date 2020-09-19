@@ -1,5 +1,13 @@
+<!--
+ * @Descripttion: wnbm
+ * @version: 3.5.1
+ * @Author: maojike
+ * @Date: 2020-09-18 22:51:43
+ * @LastEditors: maojike
+ * @LastEditTime: 2020-09-19 12:32:34
+-->
 <template>
-    <v-app>
+    <!-- <v-app>
         <v-carousel
             cycle
             height="400"
@@ -32,9 +40,10 @@
         </div>
         我是app页面
         <router-view></router-view>
-    </v-app>
-    <!-- <v-app>
     </v-app> -->
+    <v-app>
+        <router-view></router-view>
+    </v-app>
 </template>
 
 <script>
@@ -82,15 +91,15 @@ export default {
 </script>
 
 <style scoped lang="less">
-.app {
-    width: 300px;
-    height: 300px;
-    color: red;
-    display: flex;
+// .app {
+//     width: 300px;
+//     height: 300px;
+//     color: red;
+//     display: flex;
 
-    .img {
-        width: 100px;
-        height: 100px;
-    }
-}
+//     .img {
+//         width: 100px;
+//         height: 100px;
+//     }
+// }
 </style>
