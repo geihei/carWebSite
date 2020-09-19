@@ -21,10 +21,21 @@ app
         htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
         rewrites: [
             {
-                from: /^\/.*$/,
+                from: /^\/\web\/.*|\/\web$/,
                 to(context) {
-                    console.log(context)
                     return '/web'
+                },
+            },
+            {
+                from: /^\/\\h5\/.*|\/\\h5$/,
+                to(context) {
+                    return '/h5'
+                },
+            },
+            {
+                from: /^\/\demo\/.*|\/\demo$/,
+                to(context) {
+                    return '/demo'
                 },
             },
         ],
@@ -32,11 +43,11 @@ app
     .use(express.static(resolve('./dist')))
 
 app.get('/web', sendHtml('./dist/web.html'))
-// app.get('/web/index', sendHtml('./dist/web.html'))
-// app.get('/h5', sendHtml('./dist/h5.html'))
-// app.get('/h5/*', sendHtml('./dist/h5.html'))
-// app.get('/demo', sendHtml('./dist/demo.html'))
-// app.get('/demo/*', sendHtml('./dist/demo.html'))
+app.get('/h5', sendHtml('./dist/h5.html'))
+app.get('/demo', sendHtml('./dist/demo.html'))
+
+// todo 404页面处理 用户网址输入错误时友好提示
+// app.get('*', sendHtml('./dist/404.html'))
 
 app.listen(8082, () => {
     console.log('server started at localhost:8082')
