@@ -6,40 +6,45 @@
  * @LastEditors: maojike
  * @LastEditTime: 2020-09-19 13:09:11
  */
+import yyhz from './modules/yyhz'
+
 const Router = require('VueRouter')
 
-const routes = new Router({
+const routes = [
+    {
+        path: '/web',
+        redirect: '/web/index',
+    },
+    {
+        path: '/web/index',
+        name: 'Index',
+        meta: {
+            title: 'index',
+        },
+        component: () => import('@/web/src/index.vue'),
+    },
+    {
+        path: '/web/news',
+        name: 'News',
+        meta: {
+            title: 'news',
+        },
+        component: () => import('@/web/src/news/index.vue'),
+    },
+    {
+        path: '/web/cxzt',
+        name: 'cxzt',
+        meta: {
+            title: '车型展厅',
+        },
+        component: () => import('@/web/src/cxzt/index.vue'),
+    },
+    ...yyhz,
+]
+
+const router = new Router({
     mode: 'history',
-    routes: [
-        {
-            path: '/web',
-            redirect: '/web/index',
-        },
-        {
-            path: '/web/index',
-            name: 'Index',
-            meta: {
-                title: 'index',
-            },
-            component: () => import('@/web/src/index.vue'),
-        },
-        {
-            path: '/web/news',
-            name: 'News',
-            meta: {
-                title: 'news',
-            },
-            component: () => import('@/web/src/news/index.vue'),
-        },
-        {
-            path: '/web/cxzt',
-            name: 'cxzt',
-            meta: {
-                title: '车型展厅',
-            },
-            component: () => import('@/web/src/cxzt/index.vue'),
-        },
-    ],
+    routes,
 })
 
-export default routes
+export default router

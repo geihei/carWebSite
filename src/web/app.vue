@@ -8,64 +8,24 @@
 -->
 <template>
     <v-app>
+        <ele-header></ele-header>
         <router-view></router-view>
+        <!-- footer组件 -->
     </v-app>
 </template>
 
 <script>
+import EleHeader from '@/common/components/ele-header'
 
 export default {
-    data() {
-        return {
-            colors: [
-                'indigo',
-                'warning',
-                'pink darken-2',
-                'red lighten-1',
-                'deep-purple accent-4',
-            ],
-            slides: [
-                'First',
-                'Second',
-                'Third',
-                'Fourth',
-                'Fifth',
-            ],
-        }
+    components: {
+        EleHeader,
     },
-    async created() {
-        console.log('app.vue')
-
-        const obj1 = {
-            a: 1,
-            b: 2,
-        }
-
-        const obj2 = {
-            c: 3,
-        }
-
-        const obj3 = {
-            ...obj1,
-            ...obj2,
-        }
-
-        console.log(obj3)
-
+    created() {
+        console.log('进入布局页面')
     },
 }
 </script>
 
 <style scoped lang="less">
-// .app {
-//     width: 300px;
-//     height: 300px;
-//     color: red;
-//     display: flex;
-
-//     .img {
-//         width: 100px;
-//         height: 100px;
-//     }
-// }
 </style>

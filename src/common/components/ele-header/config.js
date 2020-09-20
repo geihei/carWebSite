@@ -1,18 +1,79 @@
 export default [
     {
-        title: '账号信息',
+        title: '首页',
+        name: '/index',
+        children: [
+            {
+                title: '关于我们1',
+                name: '/info',
+                children: [
+                    {
+                        title: '关于我们',
+                        name: '/info',
+                        children: [],
+                    }, {
+                        title: '品牌资讯',
+                        name: '/info',
+                        children: [],
+                    }, {
+                        title: '车型展厅',
+                        name: '/info',
+                        children: [],
+                    }, {
+                        title: '运营合作',
+                        name: '/info',
+                        children: [],
+                    }, {
+                        title: '一汽租车',
+                        name: '/info',
+                        children: [],
+                    }, {
+                        title: '一汽租车',
+                        name: '/info',
+                        children: [],
+                    },
+                ],
+            }, {
+                title: '品牌资讯',
+                name: '/info',
+                children: [],
+            }, {
+                title: '车型展厅',
+                name: '/info',
+                children: [],
+            }, {
+                title: '运营合作',
+                name: '/info',
+                children: [],
+            }, {
+                title: '一汽租车',
+                name: '/info',
+                children: [],
+            }, {
+                title: '一汽租车',
+                name: '/info',
+                children: [],
+            },
+        ],
+    }, {
+        title: '关于我们',
         name: '/info',
+        children: [],
     }, {
-        title: '企业管理',
-        name: '/manage',
+        title: '品牌资讯',
+        name: '/info',
+        children: [],
     }, {
-        title: '组织架构',
-        name: '/organize',
-        children: [{
-            title: '人员管理',
-        }],
+        title: '车型展厅',
+        name: '/info',
+        children: [],
     }, {
-        title: '消息中心',
-        name: '/message',
+        title: '运营合作',
+        name: '/info',
+        children: [],
+    }, {
+        title: '一汽租车',
+        name: '/info',
+        children: [],
     },
 ]

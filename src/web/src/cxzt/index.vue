@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <img src="@/common/assets/cxzt/cxzt-trangle.png" alt="">
+        <!-- <img src="@/common/assets/cxzt/cxzt-trangle.png" alt=""> -->
     </div>
 </template>
 
