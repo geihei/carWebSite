@@ -24,4 +24,12 @@ export default [
         },
         component: () => import('@/web/src/yyhz/jrfw.vue'),
     },
+    {
+        path: '/web/yyhz/ptjs',
+        name: 'Ptjs',
+        meta: {
+            title: '平台技术',
+        },
+        component: () => import('@/web/src/yyhz/ptjs.vue'),
+    },
 ]
