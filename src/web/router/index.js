@@ -4,7 +4,7 @@
  * @Author: maojike
  * @Date: 2020-09-18 22:51:43
  * @LastEditors: maojike
- * @LastEditTime: 2020-09-19 13:09:11
+ * @LastEditTime: 2020-09-20 10:40:34
  */
 const Router = require('VueRouter')
 
@@ -42,6 +42,14 @@ const routes = new Router({
                 title: '车型展厅',
             },
             component: () => import('@/web/src/cxzt/index.vue'),
+        },
+        {
+            path: '/web/hqcd',
+            name: 'hqcd',
+            meta: {
+                title: '红旗车队',
+            },
+            component: () => import('@/web/src/hqcd/index.vue'),
         },
     ],
 })
