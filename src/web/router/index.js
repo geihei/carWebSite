@@ -4,7 +4,7 @@
  * @Author: maojike
  * @Date: 2020-09-18 22:51:43
  * @LastEditors: maojike
- * @LastEditTime: 2020-09-20 10:40:34
+ * @LastEditTime: 2020-09-20 20:35:09
  */
 const Router = require('VueRouter')
 
@@ -50,6 +50,46 @@ const routes = new Router({
                 title: '红旗车队',
             },
             component: () => import('@/web/src/hqcd/index.vue'),
+        },
+        {
+            path: '/web/ppzx',
+            name: 'ppzx',
+            meta: {
+                title: '品牌资讯',
+            },
+            component: () => import('@/web/src/ppzx/index.vue'),
+        },
+        {
+            path: '/web/wyyy',
+            name: 'wyyy',
+            meta: {
+                title: '网约运营',
+            },
+            component: () => import('@/web/src/wyyy/index.vue'),
+        },
+        {
+            path: '/web/sjjm',
+            name: 'sjjm',
+            meta: {
+                title: '司机加盟',
+            },
+            component: () => import('@/web/src/sjjm/index.vue'),
+        },
+        {
+            path: '/web/qdhz',
+            name: 'qdhz',
+            meta: {
+                title: '渠道合作',
+            },
+            component: () => import('@/web/src/qdhz/index.vue'),
+        },
+        {
+            path: '/web/cdfw',
+            name: 'cdfw',
+            meta: {
+                title: '车队服务',
+            },
+            component: () => import('@/web/src/cdfw/index.vue'),
         },
     ],
 })

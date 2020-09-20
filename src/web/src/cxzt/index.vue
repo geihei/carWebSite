@@ -40,6 +40,11 @@ export default {
     components:{
         Form
     },
+    data() {
+        return {
+
+        }
+    },
     created() {
         console.log('我是红旗页面')
     },

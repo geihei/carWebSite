@@ -4,7 +4,7 @@
  * @Author: maojike
  * @Date: 2020-09-20 10:39:33
  * @LastEditors: maojike
- * @LastEditTime: 2020-09-20 13:13:51
+ * @LastEditTime: 2020-09-20 15:00:00
 -->
 <template>
     <div>
@@ -120,13 +120,72 @@
             <div class="standard-text">Service process</div>
           </div>
         </div>
+        <span class="title">红旗车队</span>
+        <div class="show-title">
+          一汽出行致力打造红旗车队，重点发力数字化和品质化，夯实企业级服务基础，并依托专职驾驶员培训机制，沿袭红旗品牌的匠心品质与尊崇服务理念，为用户提供更为安全、高效、稳定的出行服务。一汽出行积极探索公务用车3.0经营模式，从精细化的“红旗级服务”入手，优选红旗多款中高级车型，根据市场需求，开发多服务场景，紧贴用户打造中国式新高尚主义精致的“美妙出行”。
+        </div>
+        <div class="show-container">
+          <div class="cell-container">
+              <img class="cell-img" src="@/common/assets/hqcd/news1.png" alt="">
+              <div class="right-container">
+                  <div class="cell-point"></div>
+                  <div class="cell-describe">2019.8.8</div>
+                  <div class="cell-describe">高端专车膺选，专属国车典范</div>
+                  <div class="cell-tips">U形前格栅搭配的数据反了可视对讲就放到框里赏金符看了但是就放到框里赏金符看了但是发直瀑式中网（或超强科技配置）， 尽显东方豪华.</div>
+              </div>
+          </div>
+          <div class="cell-container double-container">
+              <div class="right-container">
+                  <div class="cell-point"></div>
+                  <div class="cell-describe">2019.9.9</div>
+                  <div class="cell-describe">高端专车膺选，专属国车典范</div>
+                  <div class="cell-tips">U形前格栅搭配麻烦的可使肌肤飞机的看来是姐夫看领导防静电刻录机饭都熟了直瀑式中网（或超强科技配置）， 尽显东方豪华.</div>
+              </div>
+              <img class="cell-img double-img" src="@/common/assets/hqcd/news2.png" alt="">
+          </div>
+        </div>
+        <div class="news-container">
+          <div class="news-cell">
+            <img src="@/common/assets/hqcd/group1.png" class="news-img" alt="">
+            <div class="news-text">123213</div>
+            <div class="news-time">
+              <img src="@/common/assets/hqcd/group1.png" class="news-clock" alt="">
+              <div>2020-11-11</div>
+            </div>
+          </div>
+          <div class="news-cell">
+            <img src="@/common/assets/hqcd/group1.png" class="news-img" alt="">
+            <div class="news-text">123213</div>
+            <div class="news-time">
+              <img src="@/common/assets/hqcd/group1.png" class="news-clock" alt="">
+              <div>2020-11-11</div>
+            </div>
+          </div>
+          <div class="news-cell">
+            <img src="@/common/assets/hqcd/group1.png" class="news-img" alt="">
+            <div class="news-text">123213</div>
+            <div class="news-time">
+              <img src="@/common/assets/hqcd/group1.png" class="news-clock" alt="">
+              <div>2020-11-11</div>
+            </div>
+          </div>
+        </div>
+        <Form type="1" title="车队服务"/>
       </div>
     </div>
 </template>
 
 <script>
+import Form from '@/web/components/message-board'
 export default {
+    components:{
+        Form
+    },
+    data() {
+      return {
 
+        }
+    },
 }
 </script>
 
@@ -259,6 +318,7 @@ export default {
   }
   .margin-top90{
     margin-top: 90/@rpx;
+    display: inline-block;
   }
   .margin-left40{
     margin-left: 0;
@@ -271,6 +331,7 @@ export default {
   }
   .standard-cell{
     text-align: center;
+    margin-bottom: 92/@rpx;
   }
   .standard-img{
     width: 437/@rpx;
@@ -286,6 +347,91 @@ export default {
     font-size:22/@rpx;
     color:#343434;
     line-height: 1;
+    font-family: Arial;
     margin-top: 10/@rpx;
+  }
+  .show-title{
+      font-size: 18/@rpx;
+      color: #373737;
+      line-height: 36/@rpx;
+      margin-top: 36/@rpx;
+      margin-bottom: 42/@rpx;
+  }
+  .cell-container{
+      display: flex;
+      align-items: center;
+      position: relative;
+  }
+  .double-container{
+      justify-content: flex-end;
+  }
+  .cell-img{
+      width: 680/@rpx;
+      margin-right: 60/@rpx;
+  }
+
+  .double-img{
+      margin-right: 0;
+      margin-left: 30/@rpx;
+  }
+  .right-container{
+    position: relative;
+    max-width: 620/@rpx;
+    word-break: break-all;
+
+  }
+  .cell-point{
+    width: 14/@rpx;
+    height: 14/@rpx;
+    background-color: #003A8F;
+    border-radius: 50%;
+    position: absolute;
+    top: 5/@rpx;
+    left: -24/@rpx;
+  }
+  .cell-describe{
+      margin-bottom: 20/@rpx;
+      font-size: 24/@rpx;
+      color: #373737;
+      font-weight: bold;
+      line-height: 1;
+  }
+  .cell-tips{
+      font-size: 20/@rpx;
+      color: #383838;
+      line-height: 36/@rpx;
+  }
+  .news-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 104/@rpx;
+    margin-bottom: 118/@rpx;
+  }
+  .news-img{
+    width: 430/@rpx;
+    height: 285/@rpx;
+  }
+  .news-text{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    margin-bottom: 24/@rpx;
+    margin-top: 24/@rpx;
+    font-size: 30/@rpx;
+    color: #333333;
+    line-height: 1;
+  }
+  .news-time{
+    display: flex;
+    font-size: 24/@rpx;
+    color: #676767;
+    align-items: center;
+    line-height: 1;
+  }
+  .news-clock{
+    width: 23/@rpx;
+    height: 23/@rpx;
+    margin-right: 12/@rpx;
   }
 </style>
