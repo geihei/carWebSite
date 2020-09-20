@@ -7,6 +7,7 @@
  * @LastEditTime: 2020-09-19 13:09:11
  */
 import yyhz from './modules/yyhz'
+import yqzc from './modules/yqzc'
 
 const Router = require('VueRouter')
 
@@ -40,6 +41,7 @@ const routes = [
         component: () => import('@/web/src/cxzt/index.vue'),
     },
     ...yyhz,
+    ...yqzc,
 ]
 
 const router = new Router({

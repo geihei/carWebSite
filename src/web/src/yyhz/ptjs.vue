@@ -88,6 +88,7 @@ export default {
     text-align: center;
     margin-top: 100px;
     margin-bottom: 80px;
+    position: relative;
     .title-ch {
         font-size:50px;
         font-family: HYZongYiJ;
@@ -99,6 +100,26 @@ export default {
         font-family: Arial;
         font-weight: 400;
         color: #666666;
+    }
+    &::before {
+        content: '';
+        width: 332/@rpx;
+        height: 1px;
+        background: #A0A0A0;
+        position: absolute;
+        bottom: 34px;
+        right: 50%;
+        margin-right: 160px;
+    }
+    &::after {
+        content: '';
+        width: 332/@rpx;
+        height: 1px;
+        background: #A0A0A0;
+        position: absolute;
+        bottom: 34px;
+        left: 50%;
+        margin-left: 160px;
     }
 }
 .tech-container {
