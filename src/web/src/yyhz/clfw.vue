@@ -54,15 +54,15 @@
             </div>
         </div>
         <div class="manage-container">
-            <div class="item item-1">
-                门店智能化
+            <div class="item item-4">
+                门店智能化<br>
                 作业平台
             </div>
-            <div class="item item-2">
-                COP系统的
+            <div class="item item-5">
+                COP系统的<br>
                 数据监控
             </div>
-            <div class="item item-3">
+            <div class="item item-6">
                 分析平台
             </div>
         </div>
@@ -78,6 +78,18 @@
                     <div class="title-en">Trial operation network</div>
                 </div>
             </div>
+        </div>
+        <div class="bussiness-container">
+            <div class="item item-1">
+                <div class="wrapper">广州</div>
+            </div>
+            <div class="item item-2">
+                <div class="wrapper">长春</div>
+            </div>
+        </div>
+        <div class="tips-container">
+            <span class="circle"></span>
+            <span>到2022年，一汽出行汽车服务预计加盟网点数将达到100家，年服务能力大于15万台</span>
         </div>
     </div>
 </template>
@@ -132,6 +144,7 @@ export default {
     width: 100%;
     background: #003A90;
     padding: 88px 0 80px 0;
+    margin-top: 165px;
     .inner-container {
         width: 100%;
         max-width: 829px;
@@ -206,9 +219,9 @@ export default {
     align-items: center;
     margin: 0 auto;
     .item {
-        width: 443/@rpx;
+        flex: 1;
         height: 306/@rpx;
-        min-width: 242px;
+        max-height: 306px;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
@@ -216,8 +229,12 @@ export default {
         font-family: Microsoft YaHei;
         font-weight: 400;
         color: #FFFFFF;
-        line-height: 306/@rpx;
+        line-height: 1.2;
         text-align: center;
+        // height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         &:nth-child(2) {
             margin: 0 20px;
         }
@@ -230,6 +247,71 @@ export default {
     }
     .item-3 {
         background-image: url(./assets/clfw-6.png);
+    }
+    .item-4 {
+        background-image: url(./assets/clfw-8.png);
+    }
+    .item-5 {
+        background-image: url(./assets/clfw-9.png);
+    }
+    .item-6 {
+        background-image: url(./assets/clfw-10.png);
+    }
+}
+.bussiness-container {
+    width: 100%;
+    max-width: 1360px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    .item {
+        flex: 1;
+        max-width: 665px;
+        height: 460/@rpx;
+        max-height: 460px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+        .wrapper {
+            font-size: 49px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+            text-shadow: 1px 8px 16px rgba(0, 0, 0, 0.54);
+            position: absolute;
+            right: 46px;
+            bottom: 34px;
+        }
+    }
+    .item-1 {
+        margin-right: 15px;
+        background-image: url(./assets/clfw-11.png);
+    }
+    .item-2 {
+        margin-left: 15px;
+        background-image: url(./assets/clfw-12.png);
+    }
+}
+.tips-container {
+    font-size: 19px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: #383838;
+    line-height: 36px;
+    margin-top: 33px;
+    margin-bottom: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .circle {
+        width: 10px;
+        height: 10px;
+        background: #003A90;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 5px;
     }
 }
 </style>
