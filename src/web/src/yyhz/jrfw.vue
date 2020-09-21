@@ -245,7 +245,6 @@ export default {
 }
 .text-container {
     width: 100%;
-    height: 400px;
     background: #003A90;
     padding: 140px 0;
     .inner-container {

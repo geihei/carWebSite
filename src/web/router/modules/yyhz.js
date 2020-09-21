@@ -32,4 +32,12 @@ export default [
         },
         component: () => import('@/web/src/yyhz/ptjs.vue'),
     },
+    {
+        path: '/web/yyhz/clfw',
+        name: 'Clfw',
+        meta: {
+            title: '车辆服务',
+        },
+        component: () => import('@/web/src/yyhz/clfw.vue'),
+    },
 ]
