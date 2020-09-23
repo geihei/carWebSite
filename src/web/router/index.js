@@ -8,6 +8,7 @@
  */
 import yyhz from './modules/yyhz'
 import yqzc from './modules/yqzc'
+import gywm from './modules/gywm'
 
 const Router = require('VueRouter')
 
@@ -23,6 +24,14 @@ const routes = [
             title: 'index',
         },
         component: () => import('@/web/src/index.vue'),
+    },
+    {
+        path: '/web/index/yssm',
+        name: 'Yssm',
+        meta: {
+            title: '隐私声明',
+        },
+        component: () => import('@/web/src/index/yssm.vue'),
     },
     {
         path: '/web/news',
@@ -90,6 +99,7 @@ const routes = [
     },
     ...yyhz,
     ...yqzc,
+    ...gywm,
 ]
 const router = new Router({
     mode: 'history',
