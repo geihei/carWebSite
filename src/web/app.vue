@@ -10,16 +10,19 @@
     <v-app>
         <ele-header></ele-header>
         <router-view></router-view>
+        <ele-info-open></ele-info-open>
         <!-- footer组件 -->
     </v-app>
 </template>
 
 <script>
 import EleHeader from '@/common/components/ele-header'
+import EleInfoOpen from '@/common/components/ele-info-open'
 
 export default {
     components: {
         EleHeader,
+        EleInfoOpen,
     },
     created() {
         console.log('进入布局页面')
