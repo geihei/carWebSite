@@ -4,7 +4,7 @@
  * @Author: maojike
  * @Date: 2020-09-18 22:51:43
  * @LastEditors: maojike
- * @LastEditTime: 2020-09-21 13:28:08
+ * @LastEditTime: 2020-09-22 23:06:11
  */
 import yyhz from './modules/yyhz'
 import yqzc from './modules/yqzc'
@@ -90,7 +90,7 @@ const routes = [
     },
     ...yyhz,
     ...yqzc,
-],
+]
 const router = new Router({
     mode: 'history',
     routes,
