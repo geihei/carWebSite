@@ -222,6 +222,7 @@ export default {
     top: 200/@rpx;
   }
   .icon-step{
+    margin: 0 auto;
     width: 171/@rpx;
     height: 76/@rpx;
     background-image: url('@/common/assets/sjjm/talk.png');

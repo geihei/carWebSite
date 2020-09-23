@@ -4,13 +4,14 @@
  * @Author: maojike
  * @Date: 2020-04-26 14:52:39
  * @LastEditors: maojike
- * @LastEditTime: 2020-09-20 18:00:34
+ * @LastEditTime: 2020-09-22 23:39:00
 --> 
 <template>
   <div>
     <div class="main-container">
-      <img src="@/common/assets/ppzx/banner.png" class="banner" alt="">
-      <img src="@/common/assets/ppzx/banner-text.png" class="banner-text" alt="">
+      <div class="banner">
+        <img src="@/common/assets/ppzx/banner-text.png" class="banner-text" alt="">
+      </div>
       <div class="title-container">
         <div class="title-ch">品牌资讯</div>
         <div class="title-en">Brand information</div>
@@ -33,6 +34,13 @@
           <div class="item-text">111</div>
         </div>
       </div>
+      <v-pagination
+        v-model="pagination.page"
+        :length="pagination.total / 5"
+        :total-visible="pagination.visible"
+        color="#002C6B"
+        light="true"
+      ></v-pagination>
     </div>
   </div>
 </template>
@@ -45,7 +53,12 @@ export default {
   },
   data(){
     return{
-
+      pagination: {
+        page: 1,
+        total: 100,
+        perPage: 10,
+        visible: 4
+      }
     }
   },
   methods:{
@@ -62,12 +75,17 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  .main-container{
+    padding-bottom: 100/@rpx;
+  }
   .banner{
-    display: block;
-    width: 100%;
     height: 915/@rpx;
     margin-bottom: 62/@rpx;
     position: relative;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-image: url('@/common/assets/ppzx/banner.png');
   }
   .banner-text{
     position: absolute;
@@ -121,6 +139,7 @@ export default {
     max-width: 1341/@rpx;
     margin: 0 auto;
     position: relative;
+    margin-bottom: 24/@rpx;
   }
   .item-img{
     width: 437/@rpx;
