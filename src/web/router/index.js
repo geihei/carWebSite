@@ -4,7 +4,7 @@
  * @Author: maojike
  * @Date: 2020-09-18 22:51:43
  * @LastEditors: maojike
- * @LastEditTime: 2020-09-19 13:09:11
+ * @LastEditTime: 2020-09-22 23:06:11
  */
 import yyhz from './modules/yyhz'
 import yqzc from './modules/yqzc'
@@ -38,12 +38,59 @@ const routes = [
         meta: {
             title: '车型展厅',
         },
-        component: () => import('@/web/src/cxzt/index.vue'),
+        component: () => import('@/web/src/hqcd/index.vue'),
+    },
+    {
+        path: '/web/hqcd',
+        name: 'hqcd',
+        meta: {
+            title: '红旗车队',
+        },
+        component: () => import('@/web/src/hqcd/index.vue'),
+    },
+    {
+        path: '/web/ppzx',
+        name: 'ppzx',
+        meta: {
+            title: '品牌资讯',
+        },
+        component: () => import('@/web/src/ppzx/index.vue'),
+    },
+    {
+        path: '/web/wyyy',
+        name: 'wyyy',
+        meta: {
+            title: '网约运营',
+        },
+        component: () => import('@/web/src/wyyy/index.vue'),
+    },
+    {
+        path: '/web/sjjm',
+        name: 'sjjm',
+        meta: {
+            title: '司机加盟',
+        },
+        component: () => import('@/web/src/sjjm/index.vue'),
+    },
+    {
+        path: '/web/qdhz',
+        name: 'qdhz',
+        meta: {
+            title: '渠道合作',
+        },
+        component: () => import('@/web/src/qdhz/index.vue'),
+    },
+    {
+        path: '/web/cdfw',
+        name: 'cdfw',
+        meta: {
+            title: '车队服务',
+        },
+        component: () => import('@/web/src/cdfw/index.vue'),
     },
     ...yyhz,
     ...yqzc,
 ]
-
 const router = new Router({
     mode: 'history',
     routes,
